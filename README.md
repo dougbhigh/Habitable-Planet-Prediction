@@ -25,4 +25,5 @@ With over 5000 training and testing records, the number of false positives outnu
 | Decision Tree | 1665                | 22                       | 0.9888134741075918                         |
 
 RandomForest was chosen as the top candidate because it scored the best against known data and had the least bias during prediction.  Even still this model predicts a 1:9 ratio compared to the 2:1 ratio of known data (false positive:confirmed).
+
 More complete documentation can be found at https://github.com/dougbhigh/Machine-Learning-Challenge/blob/main/Documentation.docx
