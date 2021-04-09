@@ -18,7 +18,7 @@ A total of 27 evaluations were made (9 models * 3 scales).  The top three models
 
 With over 5000 training and testing records, the number of false positives outnumbered the confirmed exoplanets by about 2:1.
 
-The top three models were run against candidate data that has not been confirmed as either an exoplanet or false positive.  One would expect a similiar 2:1 ratio to occur here as well, this was not the result.  However, there could be other factors that allowed easier dismissal of candidates, for example, leaving the bulk of the yet unknown to favor eventually being confirmed.
+The top three models were run against candidate data that has not been confirmed as either an exoplanet or a false positive.  One would expect a similiar 2:1 ratio to occur here as well, this was not the result.  However, there could be other factors that allowed easier dismissal of candidates, for example, leaving the bulk of the yet unknown to favor eventually being confirmed.
 
 | Model         | predicted confirmed | predicted false positive | Average accuracy from training and testing |
 |---------------|---------------------|--------------------------|--------------------------------------------|
@@ -26,4 +26,4 @@ The top three models were run against candidate data that has not been confirmed
 | Random Forest | 1515                | 172                      | 0.9939668174962293                         |
 | Decision Tree | 1665                | 22                       | 0.9888134741075918                         |
 
-RandomForest was chosen as the top candidate because it scored the best against know data and had the least bias during prediction.  Even still this model predicts a nearly 9:1 ratio in favor of a candidate being confirmed as an exoplanet compared to the nearly 2:1 ratio of known data against such.
+RandomForest was chosen as the top candidate because it scored the best against known data and had the least bias during prediction.  Even still this model predicts a nearly 9:1 ratio in favor of a candidate being confirmed as an exoplanet compared to the nearly 2:1 ratio of known data against such.
