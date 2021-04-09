@@ -4,66 +4,24 @@ Over a period of nine years in deep space, the NASA Kepler space telescope has b
 
 To help process this data, create machine learning models capable of classifying candidate exoplanets from the raw dataset.
 
-1. [Preprocess the raw data]
-2. [Tune the models](#Tune-Model-Parameters)
-3. [Compare two or more models](#Evaluate-Model-Performance)
+1. Preprocess the raw data
+2. Tune the models
+3. Compare models
 
-- - -
+# Processing
+model0_Compare.ipynb - compares nine different models, each with no scaling, standard scaling, and minmax scaling.
+model_top3.ipynb - top three models and their best scaling option are further evaluated and compared.
+model_final.ipynb – the input_data is trimmed and tuned to a RandomForest model with no scaling.
 
-## Instructions
+# Summary
+A total of 27 evaluations were made (9 models * 3 scales).  The top three models and their corresponding top scaling method were further tuned through feature selection. Once tuned, all three variations (Support Vector Classifier with standard scaling, RandomForest with no scaling, and DecisionTree with standard scaling) had an accuracy during training at over 99.0% and during testing greater than 98.0%.
+With over 5000 training and testing records, the number of false positives outnumbered the confirmed exoplanets by about 2:1.
+The top three models were run against candidate data that has not been confirmed as either an exoplanet or false positive.  One would expect a similiar 2:1 ratio to occur here as well, this was not the result.  However, there could be other factors that allowed easier dismissal of candidates, for example, leaving the bulk of the yet unknown to favor eventually being confirmed.
 
-### Preprocess the Data
+| Model         | predicted confirmed | predicted false positive | Average accuracy from training and testing |
+|---------------|---------------------|--------------------------|--------------------------------------------|
+| SVC           | 3                   | 1684                     | 0.9890648567119156                         |
+| Random Forest | 1515                | 172                      | 0.9939668174962293                         |
+| Decision Tree | 1665                | 22                       | 0.9888134741075918                         |
 
-* Preprocess the dataset prior to fitting the model.
-* Perform feature selection and remove unnecessary features.
-* Use `MinMaxScaler` to scale the numerical data.
-* Separate the data into training and testing data.
-
-### Tune Model Parameters
-
-* Use `GridSearch` to tune model parameters.
-* Tune and compare at least two different classifiers.
-
-### Reporting
-
-* Create a README that reports a comparison of each model's performance as well as a summary about your findings and any assumptions you can make based on your model (is your model good enough to predict new exoplanets? Why or why not? What would make your model be better at predicting new exoplanets?).
-
-- - -
-
-## Resources
-
-* [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
-
-* [Scikit-Learn Tutorial Part 1](https://www.youtube.com/watch?v=4PXAztQtoTg)
-
-* [Scikit-Learn Tutorial Part 2](https://www.youtube.com/watch?v=gK43gtGh49o&t=5858s)
-
-* [Grid Search](https://scikit-learn.org/stable/modules/grid_search.html)
-
-- - -
-
-## Hints and Considerations
-
-* Start by cleaning the data, removing unnecessary columns, and scaling the data.
-
-* Not all variables are significant be sure to remove any insignificant variables.
-
-* Make sure your `sklearn` package is up to date.
-
-* Try a simple model first, and then tune the model using `GridSearch`.
-
-- - -
-
-## Submission
-
-* Create a Jupyter Notebook for each model and host the notebooks on GitHub.
-
-* Create a file for your best model and push to GitHub
-
-* Include a README.md file that summarizes your assumptions and findings.
-
-* Submit the link to your GitHub project to Bootcamp Spot.
-
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
-
-##### © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+RandomForest was chosen as the top candidate because it scored the best against know data and had the least bias during prediction.  Even still this model predicts a nearly 9:1 ratio in favor of a candidate being confirmed as an exoplanet compared to the nearly 2:1 ratio of known data against such.
