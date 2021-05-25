@@ -1,8 +1,8 @@
-# Machine Learning Challenge
+# Habitable Planet Prediction
 
-Over a period of nine years in deep space, the NASA Kepler space telescope has been out on a planet-hunting mission to discover hidden planets outside of our solar system.
+Over a period of nine years in space, the NASA Kepler space telescope has been out on a planet-hunting mission to discover hidden planets outside of our solar system (exoplanets).
 
-To help process this data, create machine learning models capable of classifying candidate exoplanets from the raw dataset.
+Machine learning models used to classify candidate exoplanets from the raw dataset.
 
 1. Preprocess the raw data
 2. Tune the models
@@ -26,4 +26,4 @@ With over 5000 training and testing records, the number of false positives outnu
 
 RandomForest was chosen as the top candidate because it scored the best against known data and had the least bias during prediction.  Even still this model predicts a 1:9 ratio compared to the 2:1 ratio of known data (false positive:confirmed).
 
-More complete documentation can be found at https://github.com/dougbhigh/Machine-Learning-Challenge/blob/main/Documentation.docx
+More complete documentation can be found at https://github.com/dougbhigh/Habitable-Planet-Prediction/blob/main/Documentation.docx
