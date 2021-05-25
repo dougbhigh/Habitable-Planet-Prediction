@@ -7,6 +7,7 @@ Machine learning models used to classify candidate exoplanets from the raw datas
 1. Preprocess the raw data
 2. Tune the models
 3. Compare models
+4. hyper-tune and run best model
 
 # Processing
 model0_Compare.ipynb - compares nine different models, each with no scaling, standard scaling, and minmax scaling.
